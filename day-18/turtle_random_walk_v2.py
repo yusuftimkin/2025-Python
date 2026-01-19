@@ -1,12 +1,23 @@
-from turtle import Turtle, Screen
+import turtle as t
 import random
 
-ada = Turtle()
+ada = t.Turtle()
 
 ada.shape("turtle")
 ada.color("green")
 
-colours = ["blue", "red", "yellow", "green", "black"]
+t.colormode(255)
+
+def random_colour():
+    r = random.randint(0 , 255)
+    g = random.randint(0 , 255)
+    b = random.randint(0 , 255)
+
+    col_ran = (r, g, b)
+
+    return col_ran
+
+
 directions = ["right", "left"]
 angle = [0,90,180, 270]
 
@@ -20,7 +31,7 @@ speed = 1
 
 while current_step <= nums_steps:
 
-    ada.pencolor(random.choice(colours))
+    ada.pencolor(random_colour())
     ada.pensize(pen_size)
 
     if speed == 10:
@@ -44,6 +55,6 @@ while current_step <= nums_steps:
 
     
 
-screen = Screen()
+screen = t.Screen()
 
 screen.exitonclick()
